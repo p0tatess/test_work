@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <a href="{% url 'base' %}">Главная</a>
+    <a href="{% url 'add' %}">Добавить модуль</a>
+    {% for entrie in entries %}
+        <h1>{{entrie}}</h1>
+        <h3>{{entrie.content|truncatechars:50}}</h3>
+        <p><a href="{{ entrie.get_absolute_url }}">Читать пост</a></p>
+    {% endfor %}
+
+    {% block content %}
+    {% endblock content %}
+</body>
+</html>

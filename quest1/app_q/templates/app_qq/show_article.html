@@ -1,0 +1,7 @@
+{% extends 'app_qq/base.html' %}
+
+{% block content %}
+    <h1>{{num}}</h1>
+    <p>{{num.content}}</p>
+    <a href="{% url 'update' num.pk %}">Изменить</a>|<a href="{% url 'delete' num.pk %}">Удалить</a>
+{% endblock content %}

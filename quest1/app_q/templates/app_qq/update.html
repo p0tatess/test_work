@@ -1,0 +1,21 @@
+{% extends 'app_qq/base.html' %}
+
+{% block content %}
+    <form action="" method="post">
+        {% csrf_token %}
+        <p>
+            <label>Введите номер</label><br>
+            <input type="number" name="number" value="{{num.number}}">
+        </p>
+        <p>
+            <label>Введите навзание</label><br>
+            <input type="text" name="name" value="{{num.name}}">
+        </p>
+        <p>
+            <label>Содержимое</label><br>
+            <textarea name="content" id="1" cols="80" rows="10">{{num.content}}</textarea>
+
+        </p>
+        <input type="submit" value="Сохранить">
+    </form>
+{% endblock %}
